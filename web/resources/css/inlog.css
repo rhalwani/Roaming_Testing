@@ -1,0 +1,26 @@
+/* 
+    Document   : ttt
+    Created on : Jun 27, 2013, 2:47:15 PM
+    Author     : Riad
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+form {
+    width: 250px;
+    padding: 20px;
+    border: 1px solid #270644;
+ 
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+ 
+    background:  -moz-linear-gradient(19% 75% 90deg,#4E0085, #963AD6);
+    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#963AD6), to(#4E0085));
+ 
+    -moz-box-shadow:0px -5px 300px #270644;
+    -webkit-box-shadow:0px -5px 300px #270644;
+}

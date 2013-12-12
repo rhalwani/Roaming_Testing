@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Africell Roaming Testing - Login</title>
+        <style>
+            #login-box {
+                width:333px;
+                height: 352px;
+                padding: 58px 76px 0 76px;
+                color: #ebebeb;
+                font: 12px Arial, Helvetica, sans-serif;
+                background: url(resources/img/login-box-backg.png) no-repeat left top;
+            }
+
+            #login-box img {
+                border:none;
+            }
+
+            #login-box h2 {
+                padding:0;
+                margin:0;
+                color: #ebebeb;
+                font: bold 44px "Calibri", Arial;
+            }
+
+
+            #login-box-name {
+                float: left;
+                display:inline;
+                width:80px;
+                text-align: right;
+                padding: 14px 10px 0 0;
+                margin:0 0 7px 0;
+            }
+
+            #login-box-field {
+                float: left;
+                display:inline;
+                width:230px;
+                margin:0;
+                margin:0 0 7px 0;
+            }
+
+
+            .form-login  {
+                width: 205px;
+                padding: 10px 4px 6px 3px;
+                border: 1px solid #0d2c52;
+                background-color:#1e4f8a;
+                font-size: 16px;
+                color: #ebebeb;
+            }
+
+
+            .login-box-options  {
+                clear:both;
+                padding-left:87px;
+                font-size: 11px;
+            }
+
+            .login-box-options a {
+                color: #ebebeb;
+                font-size: 11px;
+            }
+        </style>
+    </h:head>
+    <h:body style="background: lightblue;">
+        <div style="padding: 100px 0 0 250px;">
+            <div id="login-box">
+                <h2>User Login</h2>
+                <br/>
+                <br/>
+                <form method="POST" action="j_security_check">
+
+                    <h:panelGrid columns="2">
+                        <h:outputLabel styleClass="login-box-name" value="User:" for="j_username"/>
+                        <input type="text" name="j_username" id="j_username" styleClass="login-box-field"/>
+                        <h:outputLabel styleClass="login-box-name" value="Password:" for="j_password"/>
+                        <input type="password" name="j_password" id="j_password" styleClass="login-box-field"  />
+                        <f:facet name="footer">
+                            <h:panelGroup>
+                                <input type="image" src="resources/img/login-btn.png" width="103" height="38" style="margin-left:140px; margin-top: 20px;" name="submit" onsubmit="submit - form();"/>
+                            </h:panelGroup>
+                        </f:facet>
+                    </h:panelGrid>
+                </form>
+            </div>
+        </div>
+    </h:body>
+</html>
+

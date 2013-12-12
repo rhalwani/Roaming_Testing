@@ -1,0 +1,16 @@
+/* 
+    Document   : hlr
+    Created on : Jul 3, 2013, 3:14:23 AM
+    Author     : Riad
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {
+    background: lightblue;
+}
+
+h1 {
+    text-align: center;
+    color: slateblue;
+}
