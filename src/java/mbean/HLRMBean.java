@@ -35,8 +35,9 @@ import javax.faces.event.ValueChangeEvent;
  */
 @ManagedBean
 @ViewScoped
-public class HLRMBean {
+public class HLRMBean implements java.io.Serializable {
 
+    private static final long serialVersionUID = 1L;
     /**
      * Creates a new instance of HLRMBean
      */

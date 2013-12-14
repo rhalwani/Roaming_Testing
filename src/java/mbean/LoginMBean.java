@@ -15,8 +15,9 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean
 @SessionScoped
-public class LoginMBean {
+public class LoginMBean implements java.io.Serializable {
 
+    private static final long serialVersionUID = 1L;
     /**
      * Creates a new instance of LoginMBean
      */
