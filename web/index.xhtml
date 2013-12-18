@@ -11,18 +11,17 @@
         <h1>Voice and Data Testing</h1>
         <br />
         <h:form style="padding-left: 95%;">
-            <!--a href="${request.contextPath}/logout">Logout</a-->
             <h:commandButton id="logoutButton" value="Logout" action="#{loginMBean.closeSession()}" type="submit"/>
         </h:form>
         <br />
         <h:panelGrid columns="3">
             <h:form>
-                <h:commandLink id="halink" style="" value="Load HA" action="/faces/HA/fileupload.xhtml?faces-redirect=true"/>
+                <h:commandLink id="rtestnum" style="" value="Inbound Roaming Test Number" action="inboundTest_1"/>
             </h:form>
             <h:outputText value=" "/>
             <h:form>
-                <h:commandLink id="rtestnum" style="" value="Inbound Roaming Test Number" action="inboundTest"/>
-            </h:form>            
+                <h:commandLink id="halink" style="" value="Load HA" action="/faces/HA/fileupload.xhtml?faces-redirect=true"/>
+            </h:form>
         </h:panelGrid>
         <h:form>
             <h:panelGrid columns="1">

@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "GPRSTestingMSISDN.findByCountry", query = "SELECT g FROM GPRSTestingMSISDN g WHERE g.country = :country"),
     @NamedQuery(name = "GPRSTestingMSISDN.findByOperator", query = "SELECT g FROM GPRSTestingMSISDN g WHERE g.operator = :operator"),
     @NamedQuery(name = "GPRSTestingMSISDN.findByTAPCode", query = "SELECT g FROM GPRSTestingMSISDN g WHERE g.gPRSTestingMSISDNPK.tAPCode = :tAPCode"),
+    @NamedQuery(name = "GPRSTestingMSISDN.findByMsisdnAndTAPCode", query = "SELECT g FROM GPRSTestingMSISDN g WHERE g.gPRSTestingMSISDNPK.msisdn = :msisdn and g.gPRSTestingMSISDNPK.tAPCode = :tAPCode"),
     @NamedQuery(name = "GPRSTestingMSISDN.findByDescription", query = "SELECT g FROM GPRSTestingMSISDN g WHERE g.description = :description")})
 public class GPRSTestingMSISDN implements Serializable {
     private static final long serialVersionUID = 1L;
