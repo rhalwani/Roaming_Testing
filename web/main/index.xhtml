@@ -2,12 +2,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Africell Roaming Test</title>
-        <link href="resources/css/hlr.css" type="text/css" rel="stylesheet" />
+        <!--<link href="resources/css/hlr.css" type="text/css" rel="stylesheet" />-->
     </h:head>
     <h:body>
+        <h:outputStylesheet library="css" name="hlr.css" />
         <h1>Voice and Data Testing</h1>
         <br />
         <h:form style="padding-left: 95%;">
@@ -16,13 +18,14 @@
         <br />
         <h:panelGrid columns="3">
             <h:form>
-                <h:commandLink id="rtestnum" style="" value="Inbound Roaming Test Number" action="inboundTest_1"/>
+                <h:commandLink id="rtestnum" style="" value="Inbound Roaming Test Number" action="roamtest_index"/>
             </h:form>
-            <h:outputText value=" "/>
+            <h:outputText value="    "/>
             <h:form>
-                <h:commandLink id="halink" style="" value="Load HA" action="/faces/HA/fileupload.xhtml?faces-redirect=true"/>
+                <h:commandLink id="halink" style="" value="Load HA" action="/faces/HA/fileupload.xhtml?faces-redirect=true" rendered="false" />
             </h:form>
         </h:panelGrid>
+        <p:spacer height="10 px;" />
         <h:form>
             <h:panelGrid columns="1">
 

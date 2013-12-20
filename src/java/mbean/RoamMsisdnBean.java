@@ -138,16 +138,12 @@ public class RoamMsisdnBean implements java.io.Serializable {
         //RequestContext context = RequestContext.getCurrentInstance();
         //context.reset("form:inputpanel");
         RoamTestNumEJB.addTestNumber(testTapCode, testMsisdn, testOperator, testDesc);
-        populateFullList();
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"", testMsisdn+" added!"));
     }
     
     public void addRoamMsisdn1() {
         msisdnList.add(new RoamTestMsisdn(testMsisdn, testCountry, testOperator, testTapCode, testDesc));
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,testMsisdn+" added!", "")); 
-        //RequestContext context = RequestContext.getCurrentInstance();
-        //context.reset("form:inputpanel");
-        //RoamTestNumEJB.addTestNumber(testTapCode, testMsisdn, testOperator, testDesc);
-        //populateFullList();
     }
     
 public static class RoamTestMsisdn {

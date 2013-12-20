@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Inbound Roaming Test Numbers List</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="hlr.css" />
+        <h:form id="logoutform" style="padding-left: 95%;" >
+            <h:commandButton id="logoutButton" value="Logout" action="#{loginMBean.closeSession()}" type="submit"/>
+        </h:form>
+        <p:spacer height="20px;" />
+
+        <h:form id="navform" prependId="false">
+            <p:panelGrid columns="2">
+                <p:commandLink value="HOME" action="index" />
+                <p:commandLink value="Add New MSISDN" action="roamtest_new" />
+            </p:panelGrid>
+        </h:form>
+
+        <p:spacer height="20px;" />
+
+        <h:form prependId="false">
+            <p:spacer height="30px;" />
+            <p:dataTable id="testroamdata"
+                         var="rTestMsisdn"
+                         value="#{roamMsisdnBean.msisdnList}"
+                         editable="false"
+                         sortBy="tapCode"
+                         rows="10"
+                         paginator="true"
+                         filteredValue="#{roamMsisdnBean.filteredMsisdnList}"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="10,20,30,40,50"
+                         emptyMessage="No roaming testing number found with given criteria">
+
+                <f:facet name="header">
+                    List of GPRS Roaming Testing MSISDN
+                </f:facet>
+
+                <!--p:ajax event="cellEdit" listener="#{roamMsisdnBean.onCellEdit}" /-->
+
+                <p:column headerText="MSISDN" filterMatchMode="startsWith" filterBy="msisdn">
+                    <h:outputText value="#{rTestMsisdn.msisdn}" />
+                </p:column>
+
+
+                <p:column headerText="TAP Code" sortBy="tapCode" filterMatchMode="startsWith" filterBy="tapCode">
+                    <h:outputText value="#{rTestMsisdn.tapCode}" />
+                </p:column>
+
+                <p:column headerText="Operator Name">
+                    <h:outputText value="#{rTestMsisdn.operator}" />
+                </p:column>
+
+                <p:column headerText="Country" filterMatchMode="exact" filterBy="country">
+                    <h:outputText value="#{rTestMsisdn.country}" />
+                </p:column>
+
+                <p:column headerText="Description">
+                    <h:outputText value="#{rTestMsisdn.description}" />
+                </p:column>
+                
+                <p:column headerText="">
+                    <p:commandButton actionListener="#{roamMsisdnBean.deleteFromList(rTestMsisdn)}" update="testroamdata" value="DELETE"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
